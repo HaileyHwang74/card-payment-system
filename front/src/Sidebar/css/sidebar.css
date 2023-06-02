@@ -1,0 +1,22 @@
+.sidebar_box {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*margin-top: 50px;*/
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(189, 58, 66);
+    opacity: 0.7;
+    justify-content: center;
+    padding-top: 270px;
+    font-size: 25px;
+}
+.sidebar_navlink{
+    cursor: pointer;
+}
+.sidebar_item {
+    margin-bottom: 40px;
+}
+.layout_box{
+    display: flex;
+    flex-direction: row;
+}

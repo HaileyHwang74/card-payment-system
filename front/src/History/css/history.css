@@ -1,0 +1,40 @@
+/* .history_box{ */
+    /* display: inline-flex; */
+    /* flex-direction: row; */
+/* } */
+/*  */
+/* .history_container{ */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin-top: 300px; */
+    /* margin-left:200px; */
+/* } */
+/* .history_wrap { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* width: 900px; */
+/* } */
+/*  */
+/* .history_box{ */
+    /* display: flex; */
+/* } */
+/*  */
+/* .history_button{ */
+    /* width: 100px; */
+/* } */
+/*  */
+/* .history_table { */
+    /* border: 3px solid gray; */
+    /* margin-bottom: 40px; */
+/* } */
+/* .history_table td{ */
+    /* border-style: none; */
+    /* width: 100px; */
+/* } */
+/*  */
+/* @media (max-width: 1200px) { */
+    /* .history_wrap { */
+        /* width: calc(100% - 100px); */
+    /* } */
+/* } */

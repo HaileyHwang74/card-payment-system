@@ -1,0 +1,81 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+
+}
+
+group = 'net.e4net'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+//junit Platform : test를 실행하기 위한 뼈대
+//platForm = TestEngineAPI + Console launcher + junit4 BasedRunner 등
+test{
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.projectlombok:lombok:1.18.22'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //jwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    // modelmapper
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+    //CoolSMS API(핸드폰번호 인증)
+    implementation group: 'net.nurigo', name: 'javaSDK', version: '2.2'
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'net.nurigo:sdk:4.2.4'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    //QueryDSL
+//    implementation "com.querydsl:querydsl-jpa:5.0.0"
+//    annotationProcessor(
+//            "javax.persistence:javax.persistence-api",
+//            "javax.annotation:javax.annotation-api",
+//            "com.querydsl:querydsl-apt:5.0.0:jpa")
+    implementation 'com.querydsl:querydsl-jpa'
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+    //junit
+    //jupiter는 testEngine api 구현체로 junit 5 구현하고 있음
+    //vinage는 구현체로 junit3,4를 구현하고 있음(vintage engine 포함)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    //test 엔진을 통해 테스트를 발견하고 ,수행 및 결과를 보고함
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+
+    //spring boot는 아래의 의존성만 주입해도 된다고 하는데, 위에 test 이거는 왜하는지...
+//// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.5'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+
+//Querydsl 추가, 자동 생성된 Q클래스 gradle clean으로 제거
+clean {
+    delete file('src/main/generated')
+}

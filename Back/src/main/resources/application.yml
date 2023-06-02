@@ -1,0 +1,57 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    group:
+      "local": "local"
+    active: local
+jwt:
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdH
+
+logging:
+  level:
+    '[net.e4net.demo]': debug
+---
+#local 환경
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/edudb
+    username: edu
+    password: edu
+
+  spring:
+    mvc:
+      view:
+        suffix: .html
+      hiddenmethod:
+        filter:
+          enabled: true
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+
+#  jwt:
+#    header: Authorization
+#    secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10C1zZWNyZXQK
+
+
+security:
+  jwt:
+    header: Authorization
+    secret: sdfsdfo9lknsdjhlgkjDslkhsSdfljhsDlkhsjflgkjlkjdSDflkj
+
+
+coolSms:
+  apiKey: NCSHMM9REP5E8NIR
+  apiSecretKey: DPD36WVVMSNRWAKFJ9GZNVEXJM2G6OUM

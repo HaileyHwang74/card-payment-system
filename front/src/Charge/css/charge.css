@@ -1,0 +1,42 @@
+/* .charge_box{ */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* margin:0px; */
+/* } */
+/*  */
+/* .charge_container{ */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin-top: 250px; */
+    /* margin-left:100px; */
+    /* margin-right: 0px; */
+    /* width: 1000px; */
+/* } */
+/*  */
+/* .charge_wrap { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* width: 900px; */
+    /* align-items: flex-end; */
+/* } */
+/*  */
+/* .charge_box{ */
+    /* display: flex; */
+/* } */
+/*  */
+/* .charge_button{ */
+    /* width: 100px; */
+/* } */
+/*  */
+/* .charge_button:hover{ */
+    /* background-color: #61dafb; */
+    /* color: gray; */
+/* } */
+/*  */
+/*  */
+/* @media (max-width: 1200px) { */
+    /* .charge_wrap { */
+        /* width: calc(100% - 100px); */
+    /* } */
+/* } */
